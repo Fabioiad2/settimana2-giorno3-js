@@ -115,6 +115,11 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const characterName = []
+for (let character of starWarsCharacters) {
+	characterName.push(character.name)
+}
+console.log(characterName)
 
 /* ESERCIZIO 2 — Solo i femminili
    Array vuoto "personaggiFemminili". Con un for + if (gender === "female"),
@@ -123,6 +128,19 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const femaleCharacter = [];
+for (f of starWarsCharacters) {
+	if (f.gender === "female") {
+		const newfemale = {
+			name: f.name,
+			hair_color: f.hair_color,
+			eye_color: f.eye_color
+		}
+		// console.log(newfemale)
+		femaleCharacter.push(newfemale)
+	}
+}
+console.log(femaleCharacter)
 
 /* ESERCIZIO 3 — Oggetto raggruppamento
    Crea perColoreOcchi con chiavi: blue, yellow, brown, red, blue-gray (con trattino).
@@ -130,12 +148,44 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const perColoreOcchi = {
+  blue: [],
+  yellow: [],
+  brown: [],
+  red: [],
+  "blue-gray": []
+};
 
-/* ESERCIZIO 4 — Raggruppa per colore degli occhi
+/*
+ESERCIZIO 4 — Raggruppa per colore degli occhi
    For su starWarsCharacters + switch (character.eye_color).
    In ogni case fai push del personaggio nell'array giusto. Ricorda break.
    Stampa perColoreOcchi.
 */
+
+for(eye of starWarsCharacters){
+	eyeColor = eye.eye_color
+	// console.log(perColoreOcchi);
+
+	switch(eyeColor){
+		case("blu"):
+			perColoreOcchi.blue.push(eye)
+			break
+		case("yellow"):
+			perColoreOcchi.yellow.push(eye)
+			break
+		case("brown"):
+			perColoreOcchi.brown.push(eye)
+			break
+		case("red"):
+			perColoreOcchi.red.push(eye)
+			break
+		case("blue-gray"):
+			perColoreOcchi["blue-gray"].push(eye)
+			break
+	}
+}
+console.log(perColoreOcchi,"a");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -146,6 +196,14 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let i = 0
+while(starWarsCharacters.lenght){
+	massa += Number(starWarsCharacters[i].mass);
+	console.log(massa,"ab");
+	i++
+}
+
+	
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
