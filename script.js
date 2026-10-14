@@ -197,6 +197,7 @@ console.log(perColoreOcchi,"a");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let i = 0
+let massaTotale;
 while(starWarsCharacters.lenght){
 	massa += Number(starWarsCharacters[i].mass);
 	console.log(massa,"ab");
@@ -215,6 +216,21 @@ while(starWarsCharacters.lenght){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+if(massaTotale < 500){
+	console.log("carico leggero")
+}
+else if(massaTotale < 700){
+		console.log("carico medio")
+
+	}
+	else if(massaTotale < 1000){
+		console.log("carico medio")
+
+	}
+	else{
+					console.log("PERICOLO: sovraccarico ")
+
+	}
 
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
@@ -222,7 +238,17 @@ while(starWarsCharacters.lenght){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const lisagenderfemale = []
+for(i of starWarsCharacters){
 
+	if(i.gender === "n/a"){
+		i.gender = "robot"
+
+	}
+	console.log(i)
+}
+
+console.log(lisagenderfemale)
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
    L'altezza è una stringa: convertila con Number().
