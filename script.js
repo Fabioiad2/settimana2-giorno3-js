@@ -116,10 +116,12 @@ const starWarsCharacters = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const characterName = []
-for (let character of starWarsCharacters) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	let character = starWarsCharacters[i]
 	characterName.push(character.name)
 }
-console.log(characterName)
+console.log(characterName,"1 Characters name")
+
 
 /* ESERCIZIO 2 — Solo i femminili
    Array vuoto "personaggiFemminili". Con un for + if (gender === "female"),
@@ -128,19 +130,19 @@ console.log(characterName)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("2-----------------")
 const femaleCharacter = [];
-for (f of starWarsCharacters) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	let f = starWarsCharacters[i]
 	if (f.gender === "female") {
-		const newfemale = {
+		femaleCharacter.push({
 			name: f.name,
 			hair_color: f.hair_color,
 			eye_color: f.eye_color
-		}
-		// console.log(newfemale)
-		femaleCharacter.push(newfemale)
+		})
 	}
 }
-console.log(femaleCharacter)
+console.log(femaleCharacter, "female")
 
 /* ESERCIZIO 3 — Oggetto raggruppamento
    Crea perColoreOcchi con chiavi: blue, yellow, brown, red, blue-gray (con trattino).
@@ -148,12 +150,13 @@ console.log(femaleCharacter)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("3-----------------")
 const perColoreOcchi = {
-  blue: [],
-  yellow: [],
-  brown: [],
-  red: [],
-  "blue-gray": []
+	blue: [],
+	yellow: [],
+	brown: [],
+	red: [],
+	"blue-gray": []
 };
 
 /*
@@ -163,29 +166,28 @@ ESERCIZIO 4 — Raggruppa per colore degli occhi
    Stampa perColoreOcchi.
 */
 
-for(eye of starWarsCharacters){
-	eyeColor = eye.eye_color
-	// console.log(perColoreOcchi);
-
-	switch(eyeColor){
-		case("blu"):
+console.log("4-----------------")
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	eyeColor = starWarsCharacters[i]
+	switch (eyeColor) {
+		case ("blu"):
 			perColoreOcchi.blue.push(eye)
 			break
-		case("yellow"):
+		case ("yellow"):
 			perColoreOcchi.yellow.push(eye)
 			break
-		case("brown"):
+		case ("brown"):
 			perColoreOcchi.brown.push(eye)
 			break
-		case("red"):
+		case ("red"):
 			perColoreOcchi.red.push(eye)
 			break
-		case("blue-gray"):
+		case ("blue-gray"):
 			perColoreOcchi["blue-gray"].push(eye)
 			break
 	}
 }
-console.log(perColoreOcchi,"a");
+console.log(perColoreOcchi, "a");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -196,17 +198,20 @@ console.log(perColoreOcchi,"a");
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("5-----------------")
 let i = 0
-let massaTotale;
-while(starWarsCharacters.lenght){
-	massa += Number(starWarsCharacters[i].mass);
-	console.log(massa,"ab");
+let massaTotale = 0;
+while (i < starWarsCharacters.length) {
+	let massa = starWarsCharacters[i].mass
+	massaTotale = massaTotale + Number(massa)
 	i++
 }
+console.log(massaTotale, "Totale");
 
-	
+
 
 /* ESERCIZIO 6 — Classifica il carico
+
    Su massaTotale, switch (true) o if/else if:
    < 500            → "Carico leggero"
    500 – 700        → "Carico medio"
@@ -214,23 +219,17 @@ while(starWarsCharacters.lenght){
    900 – 1000       → "Carico critico"
    > 1000           → "PERICOLO: sovraccarico"
 */
-
+console.log("6-----------------")
 /* SCRIVI QUI LA TUA RISPOSTA */
-if(massaTotale < 500){
-	console.log("carico leggero")
+switch (true) {
+	case massaTotale < 500:
+		console.log("carico leggero")
+	case massaTotale < 700:
+		console.log("carico medio")
+	case massaTotale > 1000:
+		console.log("PERICOLO: sovraccarico")
 }
-else if(massaTotale < 700){
-		console.log("carico medio")
 
-	}
-	else if(massaTotale < 1000){
-		console.log("carico medio")
-
-	}
-	else{
-					console.log("PERICOLO: sovraccarico ")
-
-	}
 
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
@@ -238,14 +237,15 @@ else if(massaTotale < 700){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("7-----------------")
 const lisagenderfemale = []
-for(i of starWarsCharacters){
+for (let i = 0; i < starWarsCharacters.length; i++) {
 
-	if(i.gender === "n/a"){
+	if (i.gender === "n/a") {
 		i.gender = "robot"
 
 	}
-	console.log(i)
+	console.log(i, "gender robot")
 }
 
 console.log(lisagenderfemale)
