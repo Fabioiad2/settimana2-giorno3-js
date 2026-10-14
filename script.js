@@ -120,7 +120,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 	let character = starWarsCharacters[i]
 	characterName.push(character.name)
 }
-console.log(characterName,"1 Characters name")
+console.log(characterName, "1 Characters name")
 
 
 /* ESERCIZIO 2 — Solo i femminili
@@ -257,20 +257,20 @@ console.log(lisagenderfemale)
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log('----------')
 console.log('8----------')
-let moreHeight = 0
-let lessHeight = 0
-
-for(let i = 0; i < starWarsCharacters.length; i++){
-	let character = Number(starWarsCharacters[i].height)
-	if (character > moreHeight) {
-		moreHeight = moreHeight + character
+let moreHeight = starWarsCharacters[0]
+let lessHeight = starWarsCharacters[0]
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	let character = starWarsCharacters[i]
+	if (character.height > Number(moreHeight.height)) {
+		moreHeight = character
 	}
-	else if(character < moreHeight){
-		lessHeight = moreHeight + character
+	else if (character.height < Number(lessHeight.height)) {
+		lessHeight = character;
 	}
 }
-console.log("min",moreHeight)
-console.log("max",lessHeight)
+console.log("----")
+console.log("max", moreHeight.height, "cm")
+console.log("più basso", lessHeight.height, "cm")
 
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
