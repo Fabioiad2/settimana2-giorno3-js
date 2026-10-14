@@ -168,22 +168,22 @@ ESERCIZIO 4 — Raggruppa per colore degli occhi
 
 console.log("4-----------------")
 for (let i = 0; i < starWarsCharacters.length; i++) {
-	eyeColor = starWarsCharacters[i]
-	switch (eyeColor) {
-		case ("blu"):
-			perColoreOcchi.blue.push(eye)
+	let character = starWarsCharacters[i]
+	switch (character.eye_color) {
+		case ("blue"):
+			perColoreOcchi.blue.push(character.eye_color)
 			break
 		case ("yellow"):
-			perColoreOcchi.yellow.push(eye)
+			perColoreOcchi.yellow.push(character.eye_color)
 			break
 		case ("brown"):
-			perColoreOcchi.brown.push(eye)
+			perColoreOcchi.brown.push(character.eye_color)
 			break
 		case ("red"):
-			perColoreOcchi.red.push(eye)
+			perColoreOcchi.red.push(character.eye_color)
 			break
 		case ("blue-gray"):
-			perColoreOcchi["blue-gray"].push(eye)
+			perColoreOcchi["blue-gray"].push(character.eye_color)
 			break
 	}
 }
@@ -224,10 +224,15 @@ console.log("6-----------------")
 switch (true) {
 	case massaTotale < 500:
 		console.log("carico leggero")
+		break
 	case massaTotale < 700:
 		console.log("carico medio")
+		break
+
 	case massaTotale > 1000:
 		console.log("PERICOLO: sovraccarico")
+		break
+
 }
 
 
@@ -269,14 +274,28 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 	}
 }
 console.log("----")
-console.log("max", moreHeight.height, "cm")
-console.log("più basso", lessHeight.height, "cm")
+console.log("max",moreHeight.name, moreHeight.height, "cm")
+console.log("più basso",lessHeight.name, lessHeight.height, "cm")
 
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
    Quando combaciano per nome, rimuovi quel nome da nomi con splice.
    Stampa lunghezza prima e dopo.
 */
+console.log(characterName,"lista non modificata")
+
+for(let i = 0; i < starWarsCharacters.length; i++){
+	for(let b = 0; b < femaleCharacter.length; b++){
+		// console.log(characterName)
+		if (characterName[i] === femaleCharacter[b].name ) {
+			console.log(characterName,"charactername[i]")
+			console.log(femaleCharacter[b],"femaleCharacter")
+			characterName.splice(i,1)
+		}
+	}
+}
+console.log(femaleCharacter,"lista donne")
+console.log(characterName,"lista senza donne")
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -288,10 +307,27 @@ console.log("più basso", lessHeight.height, "cm")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let indiceCasuale = Math.floor(Math.random() * starWarsCharacters.length)
+let personaggio = starWarsCharacters[indiceCasuale]
+if(personaggio.gender === "female"){
+	console.log(`lei è alta ${personaggio.height}cm`)
+}else{
+	console.log(`lui è alto ${personaggio.height}cm`)
+}
+if(personaggio.hair_color !== "n/a" && personaggio.hair_color !== "none"){
+	console.log(`capelli:${personaggio.hair_color}`)
+}
+else{
+	console.log("senza capelli")
+}
+console.log(personaggio,"personaggio")
 
 /* --EXTRA-- ESERCIZIO 11 — Conta per colore di occhi
    For...in sulle chiavi di perColoreOcchi.
    Stampa: "blue: 4 personaggi", "yellow: 2 personaggi", ecc.
 */
-
+console.log(perColoreOcchi)
 /* SCRIVI QUI LA TUA RISPOSTA */
+for(i in perColoreOcchi){
+	console.log(i, perColoreOcchi[i], perColoreOcchi[i].length,"lista ordinata")	
+}
