@@ -240,12 +240,11 @@ switch (true) {
 console.log("7-----------------")
 const lisagenderfemale = []
 for (let i = 0; i < starWarsCharacters.length; i++) {
-
-	if (i.gender === "n/a") {
-		i.gender = "robot"
-
+	let character = starWarsCharacters[i]
+	if (character.gender == "n/a") {
+		character.gender = "robot"
 	}
-	console.log(i, "gender robot")
+	console.log(character, "gender robot")
 }
 
 console.log(lisagenderfemale)
@@ -256,6 +255,22 @@ console.log(lisagenderfemale)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log('----------')
+console.log('8----------')
+let moreHeight = 0
+let lessHeight = 0
+
+for(let i = 0; i < starWarsCharacters.length; i++){
+	let character = Number(starWarsCharacters[i].height)
+	if (character > moreHeight) {
+		moreHeight = moreHeight + character
+	}
+	else if(character < moreHeight){
+		lessHeight = moreHeight + character
+	}
+}
+console.log("min",moreHeight)
+console.log("max",lessHeight)
 
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
